@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">AlwaysByYourSide_Main</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_AddList">AddList</string>
+    <string name="title_StartSave">StartSave</string>
+    <string name="title_Settings">Settings</string>
 </resources>
