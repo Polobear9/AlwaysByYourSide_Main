@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/tv_text1"
-            android:background="#fff342"
+            android:background="#ffccbc"
             android:layout_marginEnd="36dp"
             android:text="Test Textview"
             android:textSize="35dp"
@@ -35,7 +35,7 @@
         <TextView
             android:id="@+id/tv_text2"
             android:layout_marginTop="15dp"
-            android:background="#fff342"
+            android:background="#ffccbc"
             android:layout_marginEnd="36dp"
             android:text="Test Textview"
             android:textSize="35dp"
@@ -53,7 +53,7 @@
         <TextView
             android:id="@+id/tv_text3"
             android:layout_marginTop="15dp"
-            android:background="#fff342"
+            android:background="#ffccbc"
             android:layout_marginEnd="36dp"
             android:text="Test Textview"
             android:textSize="35dp"
