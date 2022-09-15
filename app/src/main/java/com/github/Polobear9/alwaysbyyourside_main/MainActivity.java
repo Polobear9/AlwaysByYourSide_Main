@@ -1,6 +1,11 @@
 package com.github.Polobear9.alwaysbyyourside_main;
 
+import android.bluetooth.BluetoothAdapter;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -12,7 +17,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.github.Polobear9.alwaysbyyourside_main.databinding.ActivityMainBinding;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ActivityMainBinding binding;
 
@@ -32,6 +37,19 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        Button navigation_home_bt = findViewById(R.id.bt_home);
+        navigation_home_bt.setOnClickListener(this);
+
+
     }
 
+    @Override
+    public void onClick(View view) {
+        BluetoothAdapter.getDefaultAdapter();
+        Intent intent_goHome = new Intent(Intent.ACTION_WEB_SEARCH);
+        startActivity(intent_goHome);
+        Toast.makeText(this, "start the internet", Toast.LENGTH_SHORT).show();
+
+    }
 }

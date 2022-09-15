@@ -7,13 +7,15 @@
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1695" />
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/drawable/ic_group_24px.xml" value="0.166" />
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1695" />
+        <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/drawable/ic_humidity_high-48px.xml" value="0.15" />
+        <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/drawable/ic_humidity_high_48px.xml" value="0.15" />
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1695" />
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/drawable/ic_settings_24px.xml" value="0.1695" />
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/layout/fragment_dashboard.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/layout/fragment_home.xml" value="0.16041666666666668" />
         <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/layout/fragment_notifications.xml" value="0.22" />
-        <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/menu/bottom_nav_menu.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/lieam/AndroidStudioProjects/AlwaysByYourSide_Main/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1763888888888889" />
       </map>
     </option>
   </component>

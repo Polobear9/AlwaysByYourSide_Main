@@ -3,4 +3,5 @@
     <string name="title_AddList">AddList</string>
     <string name="title_StartSave">StartSave</string>
     <string name="title_Settings">Settings</string>
+    <string name="test_button">test button</string>
 </resources>
