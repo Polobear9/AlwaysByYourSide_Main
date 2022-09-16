@@ -1,12 +1,9 @@
 package com.github.Polobear9.alwaysbyyourside_main;
 
-import android.Manifest;
 import android.app.Activity;
-import android.app.Notification;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothGattCallback;
 import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,12 +13,9 @@ import android.widget.Button;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NotificationCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -45,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         super.onCreate(savedInstanceState);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -59,21 +54,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btButton = findViewById(R.id.bt_home);
         btButton.setOnClickListener(this);
 
+
     }
 
     @Override
     public void onClick(View view) {
-        BluetoothAdapter mBtAdapter = BluetoothAdapter.getDefaultAdapter();
-        if (mBtAdapter != null) {
-            Log.d("MainActivity", "Bluetooth is support");
-            boolean btEnable = mBtAdapter.isEnabled();
-            if (!btEnable) {
-                Log.d("!btenable start", "btenable zone.");
-                Intent btOn = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                activityResultLauncher.launch(btOn);
-                Log.d("!btemableFinish", "btEnable finish");
-            }
-        }
-
+        if()
     }
 }
