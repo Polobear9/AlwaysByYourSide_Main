@@ -4,11 +4,14 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothHeadset;
+import android.bluetooth.BluetoothProfile;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +19,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.navigation.NavController;
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final int REQUEST_ENABLE_BT = 1;
     private ActivityMainBinding binding;
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,10 +54,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
-
+        //check the bluetooth is connect.. ?
         Button navigation_home_bt = findViewById(R.id.bt_home);
         navigation_home_bt.setOnClickListener(this);
+        navigation_home_bt.getAccessibilityClassName();
+
     }
+    //bluetooth need to receiver and bluetoothAdapter for connect the bluetooth.
+    BluetoothHeadset bluetoothHeadset;
 
     private final BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
@@ -67,8 +76,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     };
 
     @Override
+    //it is not work in phone and amul... need to check how to display the bluetooth on intent.
     public void onClick(View view) {
+        //Get the Default Adapter
         BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+
+        BluetoothProfile.ServiceListener profileListener = new BluetoothProfile.ServiceListener() {
+            @Override
+            public void onServiceConnected(int profile, BluetoothProfile proxy) {
+                if(profile == BluetoothProfile.HEADSET){
+                    bluetoothHeadset = (BluetoothHeadset) proxy;
+                }
+            }
+
+            @Override
+            public void onServiceDisconnected(int profile) {
+                if(profile == BluetoothProfile.HEADSET){
+                    bluetoothHeadset = null;
+                }
+
+            }
+        };
         if (bluetoothAdapter == null) {
             System.out.println("this device can not use a bluetooth check again.");
         } else {
