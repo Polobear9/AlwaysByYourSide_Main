@@ -8,7 +8,7 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="#224504"A
+        android:background="#224504"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:ignore="MissingConstraints">
