@@ -14,8 +14,9 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:id="@+id/show_about"
+            android:src="@drawable/ic_person_48px"
             android:background="#845945"
+            android:id="@+id/show_about"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginRight="20dp"

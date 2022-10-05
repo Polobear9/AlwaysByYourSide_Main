@@ -30,7 +30,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ActivityMainBinding binding;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -46,5 +46,14 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        Button button = findViewById(R.id.bt_home);
+        button.setOnClickListener(this);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(this, "Click", Toast.LENGTH_SHORT).show();
     }
 }
